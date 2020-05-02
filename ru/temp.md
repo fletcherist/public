@@ -1,58 +1,14 @@
 # временные предложения
 
 [04.25.2020 21:52]
-вот термины, которые они используют в машинном обучении:
-
-# Любит/не любит
-- loss - насколько предсказание отличается от нужного результата. В случае для списка пар `(x, y)` часто используется среднеквадратичная ошибка. Пусть `y` — это судьбой предначертанное в зависимости от `x`. Пусть `f(x)` пытается угадать, какая судьба `y` ожидаеет `x`, `square` возводит число в квадрат, тогда `square(f(x) - y)` показывает насколько вангование точно (если 0 — значит сбудется, чем больше это число — тем хуже ванга `f(x)` нагадала для `y`). Задача машинного обучния — сделать вангование более точным, в этих терминах нужно сделать `square(f(x) - y)` как можно меньше. Для двух пар данных `(x1, y1) (x2, y2)` будет так: `square(f(x1) - y1) + square(f(x2) - y2)` - чем меньше это число, тем точнее прогноз для двух примеров. Для `N` пар данных будет так:
-```ts
-const loss = (x: number, y: number): number => square(f(x) - y)
-const sum = (list: number[]): number => list.reduce((acc, element) => acc + element, 0)
-
-const lossAll = sum([[x1, y1], [x2, y2], ..., [x, y]].map(([x, y]) => loss(x, y)))
-// хочется, чтобы lossAll был как можно меньше
-```
-
 пусть **f'(x)** - производная **f(x)**
+
 1. `f'(x) > 0`, функция возрастает
 2. `f'(x) < 0`, функция убывает
 3. `f'(x) == 0`, функция не возрастает и не убывает (прямая линия на графике)
 4. `f'(x) == 0` значит `f(x)` достигает максимального значения или минимального.
 
-- что такое дифференциал?
-- что такое [градиент](https://en.wikipedia.org/wiki/Gradient), градиентный спуск (куда что спускается?)
-- как посчитать градиент для матрицы (с весами нейронов слоя) (для функции от нескольких переменных это вектор с частными производными по всем переменным)
-
-
-# loss
-`f(x)` is an инференс
-
-mean absolute error - средняя ошибка. нормас для регрессии
-```
-const loss = (x: predict[], y: output[]): number => 1 / x.length * compose(sum,  map((x, i) => f(x) - y[i]))(x)
-```
-mean squared error - средняя ошибка в квадрате. супер топ для регрессии
-```
-const loss = (x: predict[], y: output[]): number => 1 / x.length * compose(sum, squared, map((x, i) => f(x) - y[i]))(x)
-```
-
-binary cross-entropy
-```
-from math import log
- 
-# calculate binary cross entropy
-def binary_cross_entropy(actual, predicted):
-	sum_score = 0.0
-	for i in range(len(actual)):
-		sum_score += actual[i] * log(1e-15 + predicted[i])
-	mean_sum_score = 1.0 / len(actual) * sum_score
-	return -mean_sum_score
-```
-
-
 - почему в йога-сутре патанджали большинство русскоязычных переводов дают определение йоги (chitta vritti nirodha) как "остановки деятельности сознания"?
-
-
 
 домен — то, в чём читта находит своё выражение
 
@@ -62,25 +18,17 @@ def binary_cross_entropy(actual, predicted):
 
 - «я» является функцией читты
 
-
 cheeses
 
-
-
-
-[A Neural Parametric Singing Synthesizer](https://mtg.github.io/singing-synthesis-demos/) - inputs are linguistic features. here we get a fantastic example with 
+[A Neural Parametric Singing Synthesizer](https://mtg.github.io/singing-synthesis-demos/) - inputs are linguistic features. here we get a fantastic example with
 https://arxiv.org/abs/1704.03809
 https://mtg.github.io/singing-synthesis-demos/
 
-
 [jukebox]
+
 - [paper](https://cdn.openai.com/papers/jukebox.pdf)
 - [openai blogpost](https://openai.com/blog/jukebox/)
 
 1. compress raw audio with VQ-VAE
 
-
 ClariNet
-
-
-
