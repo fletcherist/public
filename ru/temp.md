@@ -66,3 +66,21 @@ def binary_cross_entropy(actual, predicted):
 cheeses
 
 
+
+
+[A Neural Parametric Singing Synthesizer](https://mtg.github.io/singing-synthesis-demos/) - inputs are linguistic features. here we get a fantastic example with 
+https://arxiv.org/abs/1704.03809
+https://mtg.github.io/singing-synthesis-demos/
+
+
+[jukebox]
+- [paper](https://cdn.openai.com/papers/jukebox.pdf)
+- [openai blogpost](https://openai.com/blog/jukebox/)
+
+1. compress raw audio with VQ-VAE
+
+
+ClariNet
+
+
+
