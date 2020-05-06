@@ -32,3 +32,10 @@ https://mtg.github.io/singing-synthesis-demos/
 1. compress raw audio with VQ-VAE
 
 ClariNet
+
+```py
+# https://magenta.tensorflow.org/datasets/nsynth#files
+traing = 'http://download.magenta.tensorflow.org/datasets/nsynth/nsynth-train.jsonwav.tar.gz'
+validation = 'http://download.magenta.tensorflow.org/datasets/nsynth/nsynth-valid.jsonwav.tar.gz'
+test = 'http://download.magenta.tensorflow.org/datasets/nsynth/nsynth-test.jsonwav.tar.gz'
+```
