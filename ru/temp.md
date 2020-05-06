@@ -39,3 +39,12 @@ traing = 'http://download.magenta.tensorflow.org/datasets/nsynth/nsynth-train.js
 validation = 'http://download.magenta.tensorflow.org/datasets/nsynth/nsynth-valid.jsonwav.tar.gz'
 test = 'http://download.magenta.tensorflow.org/datasets/nsynth/nsynth-test.jsonwav.tar.gz'
 ```
+
+# tries on making vocal dataset
+
+```
+youtube-dl --extract-audio --audio-format wav --output 1.mp4 https://youtu.be/222LeOd91ps
+youtube-dl --extract-audio --audio-format wav --output 2.mp4 https://www.youtube.com/watch?v=lgScVTu7RqM
+youtube-dl --extract-audio --audio-format wav --output 3.mp4 https://www.youtube.com/watch?v=d8cJPuXUuUs
+youtube-dl --extract-audio --audio-format wav --output 4.mp4 https://www.youtube.com/watch?v=OuSLbqL8laU
+```
