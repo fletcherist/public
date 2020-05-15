@@ -19,3 +19,16 @@ The idea, that i proposed in approximately fall 2019 was successfully [implement
 The deeper i exploring the world of deep learning articles, the stronger is my opinion that ML technology would be definitely applied to «natural» music production (cinematic, orchestral, classical) in next 2 years as a production-ready tool for a composer or musician.
 
 4:38 am I tried several examples on timbre shifting between sin and violin, and i should say that it's REALLY FUCKING AMAZING. It catches brilliantly staccato and legato (i synth sin with glide). This is definitely the future of sampling. And it's available now, we need only to create a realtime instrument for composer to use inference of sounds.
+
+07.05.2020
+
+I used the ddsp model to fit it with cello dataset i scrapped from youtube bach cello suites. It fits for 12 hours and it now it looks like overfitted.
+
+10.05.2020
+
+Started implemented Jamsandbox (later renamed to Jambox)
+
+16.05.2020
+
+Started porting [web audio modules](webaudiomodules.org) to typescript.
+I want to use their good wasm instruments such as virtual yahama dx7 in Jambox

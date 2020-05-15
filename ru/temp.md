@@ -48,3 +48,65 @@ youtube-dl --extract-audio --audio-format wav --output 2.mp4 https://www.youtube
 youtube-dl --extract-audio --audio-format wav --output 3.mp4 https://www.youtube.com/watch?v=d8cJPuXUuUs
 youtube-dl --extract-audio --audio-format wav --output 4.mp4 https://www.youtube.com/watch?v=OuSLbqL8laU
 ```
+
+# Projucer
+
+host for debugging - open `~/JUCE/extras/AudioPluginHost/AudioPluginHost.jucer`
+`~/Library/Audio/Plug-Ins/VST`
+
+prevent from spamming into stdout `&> /dev/null`
+download pretrained models
+
+```bash
+gsutil cp -r gs://ddsp/models/tf2/solo_violin_ckpt ~/pretrained
+gsutil cp -r gs://ddsp/models/tf2/solo_flute_ckpt ~/pretrained
+gsutil cp -r gs://ddsp/models/tf2/solo_flute2_ckpt ~/pretrained
+gsutil cp -r gs://ddsp/models/tf2/solo_tenor_saxophone_ckpt ~/pretrained
+gsutil cp -r gs://ddsp/models/tf2/solo_trumpet_ckpt ~/pretrained
+```
+
+tools for online jaming
+https://jammr.net/
+
+https://dotpiano.com/xV75KEqnAn3 good piano
+https://experiments.withgoogle.com/drum-machine nice experiment clustering sounds
+
+https://www.npmjs.com/package/webmidi
+https://github.com/djipco/webmidi/blob/master/src/webmidi.js
+
+https://yotammann.info/magentastudio
+
+# install deno
+
+```bash
+sudo apt-get install unzip
+curl -fsSL https://deno.land/x/install/install.sh | sh
+```
+
+# reload deno modules
+
+https://github.com/denoland/deno/blob/master/docs/linking_to_external_code/reloading_modules.md
+`deno --reload`
+
+```bash
+sudo su
+nohup deno run --allow-net --reload=https://raw.githubusercontent.com/fletcherist/jamsandbox https://raw.githubusercontent.com/fletcherist/jamsandbox/master/server/mod.ts 80 &
+```
+
+ps -ef
+
+https://www.youtube.com/watch?v=_RyLq5Pbw8M musorgsky 16:00 → strings section clear
+
+```bash
+log:
+	ssh -t ${HOST} "cd ~/${PROJECT} && tail jambox.log -f"
+
+push-local:
+	cd ~/${PROJECT}
+	kill -9 `pgrep deno` || true
+	# deno run --allow-net ./server/mod.ts 80 > jambox.log 2>&1
+	nohup deno run --allow-net ./server/mod.ts 80 > jambox.log 2>&1 &
+push:
+	rsync -avzL -r --exclude ${PROJECT} --exclude "node_modules" --exclude .git ~/${PROJECT}/ ${HOST}:~/${PROJECT}/ --delete
+	ssh -t ${HOST} "cd ~/${PROJECT} && make push-local"
+```
