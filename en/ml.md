@@ -54,8 +54,8 @@ def binary_cross_entropy(actual, predicted):
 - what is [gradient](https://en.wikipedia.org/wiki/Gradient), gradient descent?
 - how to calculate gradient for a matrix (with layer weights) (for multi variable function this a vector with partial deriatives of all arguments)
 
-
 download dataset in google colab
+
 ```py
 from google.colab import files
 files.download('example.txt')  # from colab to browser download
@@ -64,17 +64,21 @@ uploaded = files.upload() # then browse, select the files. It's then uploaded
 from google.colab import drive
 drive.mount('/content/gdrive')
 ```
+
 download something to google drive
+
 ```py
 import requests
 file_url = "http://download.magenta.tensorflow.org/datasets/nsynth/nsynth-test.jsonwav.tar.gz"
-r = requests.get(file_url, stream = True)  
-with open("/content/gdrive/My Drive/python.pdf", "wb") as file:  
-    for block in r.iter_content(chunk_size = 1024): 
-         if block:  
+r = requests.get(file_url, stream = True)
+with open("/content/gdrive/My Drive/python.pdf", "wb") as file:
+    for block in r.iter_content(chunk_size = 1024):
+         if block:
              file.write(block)
 ```
+
 unzip tar archive
+
 ```bash
 %%bash
 mkdir -p "/content/gdrive/My Drive/layers/nsynth"
@@ -83,7 +87,3 @@ tar -xvf '/content/gdrive/My Drive/layers/nsynth-test.jsonwav.tar.gz' -C '/conte
 
 good spectral operations
 https://github.com/skmhrk1209/GANSynth/blob/master/spectral_ops.py
-
-
-
-
