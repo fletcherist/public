@@ -41,4 +41,7 @@ Remove Pods.framework in:
 
 [Singing for App requires a development team. Select a development team in the Signing & Capabilities editor](https://stackoverflow.com/questions/39524148/xcode-error-code-signing-is-required-for-product-type-application-in-sdk-ios)
 
--
+## icons
+
+- [specification](https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/)
+- [Macos App with all icons](https://developer.apple.com/sf-symbols/)

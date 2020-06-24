@@ -1,18 +1,3 @@
-interface TimelineEvent {
-  date: Date;
-  comment: string;
-}
-const granula: TimelineEvent[] = [
-  {
-    date: new Date("19.06.2020 23:34"),
-    comment: `
-        Make to play mp3 song on ios device from folder. At the moment I have a working photo picker to select video,
-        and mp3 music player. The next goal is to extract audio from video file, sync them and loop. And only then start
-        working on effects.
-    `,
-  },
-];
-
 interface Movie {
   date: Date;
   name: string;
