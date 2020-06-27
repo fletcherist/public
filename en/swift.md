@@ -45,3 +45,5 @@ Remove Pods.framework in:
 
 - [specification](https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/)
 - [Macos App with all icons](https://developer.apple.com/sf-symbols/)
+
+[async images](https://www.vadimbulavin.com/asynchronous-swiftui-image-loading-from-url-with-combine-and-swift/)
